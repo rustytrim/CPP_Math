@@ -1,6 +1,6 @@
 #pragma once
 
-#include<string>
+#include <string>
 
 template <typename T>
 struct Vector2
@@ -8,63 +8,63 @@ struct Vector2
 
 	T x, y;
 
-	Vector2() : x(T()), y(T()) {};
-	Vector2(T x, T y) : x(x), y(y) {};
+	Vector2() : x(T()), y(T()){};
+	Vector2(T x, T y) : x(x), y(y){};
 
-	Vector2 operator+(const Vector2& other) const
+	Vector2 operator+(const Vector2 &other) const
 	{
 		return Vector2(x + other.x, y + other.y);
 	}
 
-	Vector2& operator+=(const Vector2& other)
+	Vector2 &operator+=(const Vector2 &other)
 	{
 		x += other.x;
 		y += other.y;
 		return *this;
 	}
 
-	Vector2 operator-(const Vector2& other) const
+	Vector2 operator-(const Vector2 &other) const
 	{
 		return Vector2(x - other.x, y - other.y);
 	};
 
-	Vector2& operator-=(const Vector2& other) const
+	Vector2 &operator-=(const Vector2 &other) const
 	{
 		x -= other.x;
 		y -= other.y;
 		return *this;
 	}
 
-	Vector2 operator/(const Vector2& other) const
+	Vector2 operator/(const Vector2 &other) const
 	{
 		return Vector2(x / other.x, y / other.y);
 	};
 
-	Vector2& operator/=(const Vector2& other)
+	Vector2 &operator/=(const Vector2 &other)
 	{
 		x /= other.x;
 		y /= other.y;
 		return *this;
 	};
 
-	Vector2 operator*(const Vector2& other) const
+	Vector2 operator*(const Vector2 &other) const
 	{
 		return Vector2(x * other.x, y * other.y);
 	};
 
-	Vector2& operator*=(const Vector2& other) const
+	Vector2 &operator*=(const Vector2 &other) const
 	{
 		x *= other.x;
 		y *= other.y;
 		return *this;
 	};
 
-	Vector2 operator%(const Vector2& other) const
+	Vector2 operator%(const Vector2 &other) const
 	{
 		return Vector2(x % other.x, y % other.y);
 	};
 
-	Vector2& operator%=(const Vector2& other) const
+	Vector2 &operator%=(const Vector2 &other) const
 	{
 		x %= other.x;
 		y %= other.y;
@@ -76,21 +76,20 @@ struct Vector2
 		return std::sqrt((x * x) + (y * y));
 	};
 
-
-	Vector2& Normalize() const
+	Vector2 &Normalize() const
 	{
 		T mag = Magnitude();
 		x /= mag;
 		y /= mag;
 		return *this;
 	};
-	
-	T Cross(const Vector2& other) const
+
+	T Cross(const Vector2 &other) const
 	{
 		return (x * other.x) - (y * other.y);
 	};
 
-	T Dot(const Vector2& other) const
+	T Dot(const Vector2 &other) const
 	{
 		return ((x * other.x) + (y + other.y));
 	};
